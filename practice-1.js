@@ -31,7 +31,7 @@ if (typeof x === "undefined") {
 }
 console.log(message);
 
-if (typeof a ==='object') {
+if (typeof a === "object") {
   message = `что-то пошло не так`;
 } else {
   message = `тип данных прошел проверку`;
@@ -122,10 +122,54 @@ switch (lang) {
     console.log(`choose another language`);
 }
 
-
 const obj = {
-  'en': ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
-  'ru':  ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
-}
+  en: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+  ru: ["пн", "вт", "ср", "чт", "пт", "сб", "вс"],
+};
 console.log(obj[lang]);
 
+// ----------------------------------------------------------
+
+const numberX = "25";
+let sum = 0;
+for (let i = 0; i < numberX; i += 1) {
+  sum += i;
+}
+console.log(sum);
+
+const target1 = 15;
+let sum1 = 0;
+
+for (let i = 0; i < target1; i += 1) {
+  sum1 += i;
+}
+
+console.log(sum1);
+
+const target2 = 3;
+let sum2 = 0;
+
+for (let i = 0; i < target2; i += 1) {
+  sum2 += i;
+}
+
+console.log(sum2);
+
+const target3 = 2;
+let sum3 = 0;
+
+for (let i = 0; i < target3; i += 1) {
+  sum3 += i;
+}
+
+console.log(sum3);
+
+
+const numberY = 10;
+ for(let i = 0; i < numberY; i++ ){
+   if(i % 2 === 0){
+
+     continue
+   }
+   console.log(i);
+ }
