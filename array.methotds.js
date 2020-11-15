@@ -261,7 +261,7 @@
 // const tagCount = countTags(tags);
 // console.log(tagCount);
 
-// ----------------------- sort() ----------------------------- //
+// ----------------------- sort() ----------------------- //
 
 // const string = "I love javascript";
 // console.log(string.split("").sort());
