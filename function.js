@@ -232,8 +232,8 @@
 // console.log(add(2, 5, 7, 9));
 // ------------------------------------
 
-const posts = ["post-1", "post-2", "post-3", "post-4", "post-5"];
-const tag = "#jqueryrules";
+// const posts = ["post-1", "post-2", "post-3", "post-4", "post-5"];
+// const tag = "#jqueryrules";
 
 // const postWithTag = [];
 
@@ -270,19 +270,69 @@ const tag = "#jqueryrules";
 // withdraw(500, 300);
 // withdraw(100, 300);
 
-// Guard Clause//
-const withdraw = function (amount, balance) {
-  if (amount === 0) {
-    console.log("введите сумму больше нуля");
-    return;
-  }
-  if (amount > balance) {
-    console.log("недостаточно средств на счету");
-    return;
-  }
-  console.log("операция снятия средств проведена");
-};
+// // Guard Clause//
+// const withdraw = function (amount, balance) {
+//   if (amount === 0) {
+//     console.log("введите сумму больше нуля");
+//     return;
+//   }
+//   if (amount > balance) {
+//     console.log("недостаточно средств на счету");
+//     return;
+//   }
+//   console.log("операция снятия средств проведена");
+// };
 
-withdraw(0, 300);
-withdraw(500, 300);
-withdraw(100, 300);
+// withdraw(0, 300);
+// withdraw(500, 300);
+// withdraw(100, 300);
+
+// ---------------------- ()=>{} ----------------------
+
+// const [name](param-1, param-2,) => {statment}
+
+// const add = function (a, b, c) {
+//   return a + b + c;
+// };
+// console.log(add(7, 14, 28));
+
+// const add = (a, b, c) => a * b * c;
+
+// console.log(add(7, 14, 28));
+
+// // функция без параметров
+// const fn = () => {
+//   console.log("Hello");
+// };
+// fn();
+
+// const add1 = (...args) => {
+//   console.log(args);
+// };
+// add1(12, 23, 45, 78); //полноценный массив
+
+//  ------------------ параметры по умолчанию --------------------
+
+// const count = function (countFrom = 0, countTo = 10, step = 1) {
+//   console.log(`countFrom = ${countFrom}, countTo = ${countTo}, step = ${step}`);
+
+//   for (let i = countFrom; i <= countTo; i += step) {
+//     console.log(i);
+//   }
+// };
+// count(1, 5);
+// count(2);
+// count(undefined, 5, 2);
+// count()
+// ---------------------- function declaration ---------------------
+
+// function add(a, b, c) {
+//   return a + b + c;
+// }
+// add(1, 2, 3);
+
+// print("text");// вызов функции до ее объявления
+
+// function print(str){
+//   console.log(str);
+// }
