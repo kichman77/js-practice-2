@@ -55,13 +55,13 @@
 //     chelsy: 38,
 //   })
 // ); // lux
-// ----------------------------
+// // ----------------------------
 
 // hw-3 task-4 //
 
 // const countTotalSalary = function (employees) {
-//   const arr1 = Object.keys(employees); // получаем доступ к ключам объекта
-//   console.log(arr1);
+//   // const arr1 = Object.keys(employees); // получаем доступ к ключам объекта
+//   // console.log(arr1);
 //   const arr = Object.values(employees); // получаем доступ к значениям элементов объекта
 //   console.log(arr);
 
@@ -69,11 +69,11 @@
 //   //
 //   for (const elem of Object.values(employees)) { //пребираем объект
 //     total += elem;// на каждой итерации в переменную "счетчик" плюсуется значение(value)
+//     console.log(total);
 //   }
 //   return total;// возвращаем значение
 // };
-
-// console.log(countTotalSalary({})); // 0
+// // console.log(countTotalSalary({})); // 0
 
 // console.log(
 //   countTotalSalary({
@@ -102,8 +102,8 @@
 // ];
 
 // const getAllPropValues = function(arr, prop) {
-//   console.log(prop);// name/quantity/category
-//   console.log(arr);//массив объектов
+//   // console.log(prop);// name/quantity/category
+//   // console.log(arr);//массив объектов
 //   let array = [];
 //   for(let obj of arr){ // перебираем массив в цикле
 //     // console.log(obj);// получаем доступ к объектам из массива
@@ -124,103 +124,151 @@
 
 // console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
 
-// console.log(getAllPropValues(products, 'price')); // []
+// console.log(getAllPropValues(products, 'price')); //
 
 // -----------------------------------------------------
 
 // hw- 3 task-6//
 
 // const products = [
-//   { name: 'Радар', price: 1300, quantity: 4 },
-//   { name: 'Сканер', price: 2700, quantity: 3 },
-//   { name: 'Дроид', price: 400, quantity: 7 },
-//   { name: 'Захват', price: 1200, quantity: 2 },
+//   { name: "Радар", price: 1300, quantity: 4 },
+//   { name: "Сканер", price: 2700, quantity: 3 },
+//   { name: "Дроид", price: 400, quantity: 7 },
+//   { name: "Захват", price: 1200, quantity: 2 },
 // ];
 
-// const calculateTotalPrice = function(allProducts, productName) {
-//     // console.log(allProducts, productName);// параметры принимающие значение из аргументов в вызове функции
+// const calculateTotalPrice = function (allProducts, productName) {
+//   // console.log(allProducts, productName);// параметры принимающие значение из аргументов в вызове функции
 
-//     for(let elem of allProducts){ // перебор массива объектов
-//       // console.log(elem); // получили доступ к объектам
-//       for(let key in elem){ // перебираем объект
-//         // console.log(key);// получили доступ к ключам объекта
+//   for (let elem of allProducts) {
+//     // перебор массива объектов
+//     // console.log(elem); // получили доступ к объектам
+//     for (let key in elem) {
+//       // перебираем объект
+//       // console.log(key);// получили доступ к ключам объекта
 
-//         if(elem[key] === productName){ // если имя объекта совпадает с именем переданным при вызове функции
-//           return elem.price * elem.quantity // возврвщаем результат умножения цены на кол-во
-//         }
+//       if (elem[key] === productName) {
+//         // если имя объекта совпадает с именем переданным при вызове функции
+//         return elem.price * elem.quantity; // возврвщаем результат умножения цены на кол-во
 //       }
-
 //     }
+//   }
 // };
 
 // /*
 //  * Вызовы функции для проверки работоспособности твоей реализации.
 //  */
-// console.log(calculateTotalPrice(products, 'Радар')); // 5200
+// console.log(calculateTotalPrice(products, "Радар")); // 5200
 
-// console.log(calculateTotalPrice(products, 'Дроид')); // 2800
+// console.log(calculateTotalPrice(products, "Дроид")); // 2800
 // ---------------------------------------------------------------
 
 //hw-3 task-7//
 
-/*
- * Типов транзацкий всего два.
- * Можно положить либо снять деньги со счета.
- */
-const Transaction = {
-  DEPOSIT: 'deposit',
-  WITHDRAW: 'withdraw',
-};
+// /*
+//  * Типов транзацкий всего два.
+//  * Можно положить либо снять деньги со счета.
+//  */
+// const Transaction = {
+//   DEPOSIT: "deposit",
+//   WITHDRAW: "withdraw",
+// };
 
-/*
- * Каждая транзакция это объект со свойствами: id, type и amount
- */
+// /*
+//  * Каждая транзакция это объект со свойствами: id, type и amount
+//  */
 
-const account = {
-  // Текущий баланс счета
-  balance: 0,
+// const account = {
+//   // Текущий баланс счета
+//   balance: 0,
 
-  // История транзакций
-  transactions: [],
+//   // История транзакций
+//   transactions: [],
 
-  /*
-   * Метод создает и возвращает объект транзакции.
-   * Принимает сумму и тип транзакции.
-   */
-  createTransaction(amount, type) {},
+//   /*
+//    * Метод создает и возвращает объект транзакции.
+//    * Принимает сумму и тип транзакции.
+//    */
+//   createTransaction(amount, type) {
+//     let id = this.transactions.length + 1;
+//     // console.log(id);
 
-  /*
-   * Метод отвечающий за добавление суммы к балансу.
-   * Принимает сумму танзакции.
-   * Вызывает createTransaction для создания объекта транзакции
-   * после чего добавляет его в историю транзакций
-   */
-  deposit(amount) {},
+//     const transaction = { id: id, amount: amount, type: type };
+//     return transaction;
+//   },
 
-  /*
-   * Метод отвечающий за снятие суммы с баланса.
-   * Принимает сумму танзакции.
-   * Вызывает createTransaction для создания объекта транзакции
-   * после чего добавляет его в историю транзакций.
-   *
-   * Если amount больше чем текущий баланс, выводи сообщение
-   * о том, что снятие такой суммы не возможно, недостаточно средств.
-   */
-  withdraw(amount) {},
+//   /*
+//    * Метод отвечающий за добавление суммы к балансу.
+//    * Принимает сумму танзакции.
+//    * Вызывает createTransaction для создания объекта транзакции
+//    * после чего добавляет его в историю транзакций
+//    */
+//   deposit(amount) {
+//     const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
+//     this.transactions.push(transaction);
+//     return (this.balance += amount);
+//   },
 
-  /*
-   * Метод возвращает текущий баланс
-   */
-  getBalance() {},
+//   /*
+//    * Метод отвечающий за снятие суммы с баланса.
+//    * Принимает сумму танзакции.
+//    * Вызывает createTransaction для создания объекта транзакции
+//    * после чего добавляет его в историю транзакций.
+//    *
+//    * Если amount больше чем текущий баланс, выводи сообщение
+//    * о том, что снятие такой суммы не возможно, недостаточно средств.
+//    */
+//   withdraw(amount) {
+//     if (this.balance >= amount) {
+//       const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
+//       this.transactions.push(transaction);
+//       return (this.balance -= amount);
+//     }
+//     return "не достаточно средств";
+//   },
 
-  /*
-   * Метод ищет и возвращает объект транзации по id
-   */
-  getTransactionDetails(id) {},
+//   /*
+//    * Метод возвращает текущий баланс
+//    */
+//   getBalance() {
+//     return this.balance;
+//   },
 
-  /*
-   * Метод возвращает количество средств
-   * определенного типа транзакции из всей истории транзакций
-   */
-  getTransactionTotal(type) {},
-};
+//   /*
+//    * Метод ищет и возвращает объект транзации по id
+//    */
+//   getTransactionDetails(id) {
+//     for (let elem of this.transactions) {
+//       // console.log(elem);
+//       if (elem.id === id) return elem;
+//     }
+//     return "такой транзакции нет";
+//   },
+
+//   /*
+//    * Метод возвращает количество средств
+//    * определенного типа транзакции из всей истории транзакций
+//    */
+//   getTransactionTotal(type) {
+//     let total = 0;
+//     for (let elem of this.transactions) {
+//       // console.log(elem);
+//       if (elem.type === type) {
+//         total += elem.amount;
+//       }
+//     }
+//     return total;
+//   },
+// };
+
+// console.log(account.deposit(4000));
+// console.log(account.balance);
+// console.log(account.deposit(3000));
+// console.log(account.balance);
+// console.log(account.withdraw(2000));
+// console.log(account.getBalance());
+// console.log(account.transactions);
+// console.log(account.getTransactionDetails(3));
+// console.log(account.getTransactionDetails(4));
+// console.log(account.getTransactionTotal(Transaction.DEPOSIT));
+// console.log(account.getTransactionTotal(Transaction.WITHDRAW));
