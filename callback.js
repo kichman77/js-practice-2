@@ -1,13 +1,14 @@
 // const greet = function (name) {
 //   console.log(`Hello ${name}`);
 // };
-// const greetWithName = function (callback) {
-//   const name = "Mango";
-//   console.log(callback);
+// const userName = "Mango";
+
+// const greetWithName = function (callback, name) {
+//   // console.log(callback);
 //   callback(name);
 // };
 
-// greetWithName(greet);
+// greetWithName(greet, userName);
 // // -------------------------------------
 
 // const button = document.querySelector("button");
@@ -17,7 +18,7 @@
 // };
 
 // button.addEventListener("click", hendleButtonClick);
-// ----------------------------------------
+// ------------------------------------------
 
 // console.log('в коде перед таймаут');
 // setTimeout(function(){
@@ -41,17 +42,17 @@
 // const printMessage = function (message) {
 //   console.log(message);
 // };
+// const someString = "HOCs are awesome";
 
-// const higherOrderFunction = function (callback) {
-//   const string = "HOCs are awesome";
+// const higherOrderFunction = function (callback, string) {
 //   callback(string);
 // };
 
-// higherOrderFunction(printMessage);
+// higherOrderFunction(printMessage, someString);
 // -------------------------------------------
 
 // const repeatLog = function (n) {
-//   for (let i = 0; i < n; i++) console.log(i);
+//   for (let i = 1; i <= n; i++) console.log(i);
 // };
 // repeatLog(5); // аргумент определяет кол-во итераций в цикле
 // ---------------------------------------------
