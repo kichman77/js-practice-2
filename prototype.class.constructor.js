@@ -121,6 +121,7 @@
 // console.log(kongo.sell("TV"));
 // console.log(kongo.sell("Microwave"));
 // console.log(kongo.sales);
+
 // ---------------------------------------------
 
 // const Hero = function (name, xp) {
