@@ -164,3 +164,108 @@
 // kongo.attack()
 // kongo.gainXp(250)
 // console.log(kongo);
+// ----------------------------------
+// Класс//
+
+// class Hero {
+//   constructor(name, xp) {
+//     this._name = name;
+//     this.xp = xp;
+//   }
+//   // static description = "this is a Hero base class";
+
+//   // static showStats(hero) {
+//   //   console.log(this);// ссылается на сам class Hero
+//   //   console.log("Logging stats from Hero.showStats", hero);
+//   // }
+//   get name() {
+//     return this._name; // геттер - получить значение
+//   }
+
+//   set name(newName) {
+//     this._name = newName; // сеттер - изменить значение
+//   }
+//   // changeName(name) {
+//   //   this.name = name;
+//   // }
+
+//   // getName(){
+//   //   return this.name
+//   // }
+
+//   gainXp(amount) {
+//     console.log(`${this.name} получил ${amount} опыта`);
+//     this.xp += amount;
+//   }
+// }
+// console.dir(Hero);
+
+// const mango = new Hero("Mango", 1200);
+// // console.log(mango);
+// // mango.changeName("Bady");
+// console.log(mango);
+// mango.gainXp(2000);
+// console.log(mango);
+// // console.log(Hero.description);
+// // Hero.showStats("Bady") // статические методы не имеют своего this
+// // и ссылаются на сам class
+// // console.log(mango.getName());
+
+// console.log(mango.name);
+// mango.name = 'Bob'
+// console.log(mango.name);
+// ----------------------------------
+
+// class Hero {
+//   constructor(name, xp) {
+//     this._name = name;
+//     this.xp = xp;
+//   }
+//   get name() {
+//     return this._name; // геттер - получить значение
+//   }
+//   set name(newName) {
+//     this._name = newName; // сеттер - изменить значение
+//   }
+//   gainXp(amount) {
+//     console.log(`${this.name} получил ${amount} опыта`);
+//     this.xp += amount;
+//   }
+// }
+// // console.dir(Hero);
+
+// // Наследование class
+// class Warrior extends Hero {
+//   constructor(name, xp, weappon) {
+//     super(name, xp);
+//     this.weappon = weappon;
+//   }
+//   attack() {
+//     console.log(`${this.name} attack with ${this.weappon}`);
+//   }
+//   cast(){
+//     console.log(`${this.name} casts spells ${this.spells}`);
+//   }
+// }
+
+// const mango = new Warrior("Bady", 1200, "Spear");
+// console.log(mango);
+// mango.attack();
+// // console.dir(Warrior);
+// mango.gainXp(3500);
+
+// class Palladin extends Warrior {
+//   constructor(name, xp, weappon, spells) {
+//     super(name, xp, weappon);
+//     this.spells = spells;
+//   }
+// }
+
+// const palladin = new Palladin("Ali", 1700, "Spear", "трах-тибидох");
+// console.log(palladin);
+// palladin.attack();
+// palladin.gainXp(1200);
+// console.log(palladin.name);
+// palladin.cast()
+// console.dir(Palladin);
+// console.log(typeof Palladin);

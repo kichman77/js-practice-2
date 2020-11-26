@@ -157,8 +157,57 @@
 
 // let time = prompt("введите число");
 // let hourTime = Math.floor(time / 60);
-// // console.log(hourTime);
+// console.log(hourTime);
 // let minTime = time % 60;
-// // console.log(minTime);
+// console.log(minTime);
 
 // console.log(`time : hour ${hourTime} : min ${minTime}`);
+
+// -----------------------------------------------
+// 9. Написати гру камінь ножиці папір. Де компютер загадує своє значення
+// потім користувач вводить свій варіант і далі ми
+// бачимо результат на екпані хто виграв
+
+const gameRef = {
+  game: document.querySelector(".game"),
+  stone: document.querySelector("[name='stone']"),
+  scissors: document.querySelector("[name='scissors']"),
+  paper: document.querySelector("[name='paper']"),
+  result: document.querySelector(".result"),
+};
+// console.log(gameRef);
+
+let game = ["stone", "paper", "scissors"];
+// console.log(game);
+
+function getIdx(array) {
+  let idx = Math.floor(Math.random() * array.length);
+  return idx;
+}
+gameRef.game.addEventListener("click", (e) => {
+  // console.log(e.target.name);
+  let result;
+  let user = e.target.name;
+  let comp = game[getIdx(game)];
+  // console.log(comp, user);
+  if (comp === user) {
+    result = `ничья: ${comp} - ${user} играем дальше`;
+    gameRef.result.textContent = result;
+  } else {
+    if (
+      (comp === "stone" && user === "scissors") ||
+      (comp === "scissors" && user === "paper") ||
+      (comp === "paper" && user === "stone")
+    ) {
+      result = `компьютер со значением ${comp} выиграл у пользователя со значением ${user}`;
+      gameRef.result.textContent = result;
+    } else if (
+      (comp === "stone" && user === "paper") ||
+      (comp === "scissors" && user === "stone") ||
+      (comp === "paper" && user === "scissors")
+    ) {
+      result = `user со значением ${user} выиграл у компьютера со значением ${comp}`;
+      gameRef.result.textContent = result;
+    }
+  }
+});
