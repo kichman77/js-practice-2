@@ -176,5 +176,92 @@
 // console.log(table[2][2]);
 // console.log(table[0][1]);
 // console.log(table.length);
+// ---------------------------------------------
+// Задача - сложение 2-х массивов//
 
+// [3,2,6,6],[-7,2,2,8]
+// 3266 + (-7228) = -3962
+// -3962 перевести в масив [-3,9,6,2]
+// function addArrays(array1, array2) {
+//   const arrayOfNumbers = [];
 
+//   let arrayToNumber1 = parseInt(array1.join(""));
+//   let arrayToNumber2 = parseInt(array2.join(""));
+//   const sumNummbers = arrayToNumber1 + arrayToNumber2;
+//   const numberToArray = String(sumNummbers).split("");
+//   for (let i = 0; i < numberToArray.length - 1; i++) {
+//     if (numberToArray[i] === "-") {
+//       arrayOfNumbers.push(numberToArray[i] + numberToArray[i + 1]);
+//     }
+//     if (numberToArray[i] !== "-") {
+//       arrayOfNumbers.push(numberToArray[i + 1]);
+//     }
+//   }
+
+//   return arrayOfNumbers.map((el) => Number(el));
+// }
+// -------------------------
+// let array1 = [3, 2, 6, 6];
+// let array2 = [-7, 2, 2, 8];
+// let number = -3962;
+
+// const resultArray = [];
+
+// let arr1 = array1.join("");
+// console.log(arr1);
+// let arr2 = array2.join("");
+// console.log(arr2);
+
+// let result = Number(arr1) + Number(arr2);
+// console.log(result);
+// const num = String(result).split("");
+// console.log(num);
+
+// let spliceNum = num.splice(0, 2);
+// console.log(num);
+// let num1 = [];
+// num.forEach((a) => num1.push(Number(a)));
+
+// console.log(spliceNum);
+// console.log(Number(spliceNum[0].concat(spliceNum[1])));
+// let y = Number(spliceNum[0].concat(spliceNum[1]));
+// resultArray.push(y, ...num1);
+// console.log(resultArray);
+// -------------------------------------------
+// function addArrays(array1, array2) {
+//   // console.log(array1);
+//   // console.log(array2);
+
+//   let a = array1.join("");
+//   // console.log(+a);
+
+//   let b = array2.join("");
+//   // console.log(+b);
+
+//   let c = +a + +b;
+//   // console.log(c);
+
+//   let d = String(c);
+//   // console.log(d.substring(0, 1));
+
+//   const result = d.split("");
+//   // console.log(result);
+
+//   const arr = [];
+//   for (let i = 0; i < result.length; i++) {
+//     console.log(result[i]);
+//     if (result[i] !== "-") {
+//       arr.push(+result[i]);
+//     } else {
+
+//       let x = result[i] + result[i + 1];
+//       result.splice(i+1, 1)
+//       // console.log(x);
+//       arr.push(+x);
+//       // console.log(result.substring((i+1), (i+2)));
+//     }
+//   }
+//   console.log(arr);
+// }
+
+// addArrays([3, 2, 6, 6], [-7, 2, 2, 8]);
