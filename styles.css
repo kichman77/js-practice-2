@@ -86,3 +86,38 @@ body.show-modal .modal {
   transform: scale(1.1);
   transition: transform 200ms ease-in-out;
 }
+/* всплытие событий */
+#parent {
+  width: 350px;
+  height: 300px;
+  background-color: blue;
+}
+#child {
+  width: 250px;
+  height: 200px;
+  background-color: green;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+#inner-child {
+  width: 150px;
+  height: 100px;
+  background-color: red;
+  margin-top: 30px;
+  margin-left: 40px;
+}
+/* делегирование */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+.tags__item {
+  margin-right: 5px;
+}
+.tags__btn--active{
+  background-color: yellow;
+}

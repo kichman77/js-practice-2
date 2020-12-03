@@ -327,20 +327,112 @@
 // -------------------------------
 // Модальное окно
 
-const openModalBtn = document.querySelector('button[data-action="open-modal"]');
-const closeModalBtn = document.querySelector(
-  'button[data-action="close-modal"]'
-);
+// const openModalBtn = document.querySelector('button[data-action="open-modal"]');
+// const closeModalBtn = document.querySelector(
+//   'button[data-action="close-modal"]'
+// );
+// const backdropRef = document.querySelector(".js-backdrop");
 
-openModalBtn.addEventListener("click", onOpenModal);
-closeModalBtn.addEventListener("click", onCloseModal);
+// openModalBtn.addEventListener("click", onOpenModal);
+// closeModalBtn.addEventListener("click", onCloseModal);
+// backdropRef.addEventListener("click", onBackDropClick);
 
-function onOpenModal() {
-  document.body.classList.add("show-modal");
-}
-function onCloseModal() {
-  document.body.classList.remove("show-modal");
-}
+// function onOpenModal() {
+//   window.addEventListener("keydown", onPressEscape);
+//   document.body.classList.add("show-modal");
+// }
+// function onCloseModal() {
+//   window.removeEventListener("keydown", onPressEscape);
+//   document.body.classList.remove("show-modal");
+// }
 
+// function onBackDropClick(event) {
+//   // console.log("event.target", event.target); // целевой элемент клика
+//   // console.log("event.currentTarget", event.currentTarget); // элемент на котором стоит обработчик события
+//   if (event.target === event.currentTarget) {
+//     onCloseModal();
+//   }
+// }
+
+// function onPressEscape(event) {
+//   if (event.code === "Escape") {
+//     onCloseModal();
+//     console.log("esc"); // сняли слушателя с Esc
+//   }
+// }
+
+// удаление слушателя события
 // openModalBtn.removeEventListener("click", onOpenModal);
 // closeModalBtn.removeEventListener("click", onCloseModal);
+// ----------------------------------------------------------
+////Всплытие события
+
+// const refs = {
+//   parent: document.querySelector("#parent"),
+//   child: document.querySelector("#child"),
+//   innerChild: document.querySelector("#inner-child"),
+// };
+
+// // console.log(refs.parent);
+// // console.log(refs.child);
+// // console.log(refs.innerChild);
+
+// const parentClickHandler = (event) => {
+//   console.log("Parent click handler");
+//   console.log("event.target :", event.target);
+//   console.log("event.currentTarget :", event.currentTarget);
+// };
+// const childClickHandler = (event) => {
+//   console.log("Child click handler");
+//   console.log("event.target :", event.target);
+//   console.log("event.currentTarget :", event.currentTarget);
+// };
+// const innerChildClickHandler = (event) => {
+//   console.log("innerChild click handler");
+//   console.log("event.target :", event.target);
+//   console.log("event.currentTarget :", event.currentTarget);
+
+//   // event.stopPropagation(); //остановка всплытия
+// };
+
+// refs.parent.addEventListener("click", parentClickHandler);
+// refs.child.addEventListener("click", childClickHandler);
+// refs.innerChild.addEventListener("click", innerChildClickHandler);
+// ---------------------------------------------------------------------
+// Делегирование//
+
+const refs = {
+  tags: document.querySelector(".js-tags"),
+  activetagOutput: document.querySelector(".js-active-tg"),
+};
+// console.log(refs.tags)
+// console.log( refs.activetagOutput);
+
+refs.tags.addEventListener("click", onTagsClick);
+
+function onTagsClick(event) {
+  // console.log(event.target);
+  // console.log(event.target.nodeName);
+  if (event.target.nodeName !== "BUTTON") {
+    console.log("клик не по кнопке");
+    return;
+  }
+  const nextActiveTag = event.target;
+  const activeTagValue = nextActiveTag.dataset.value;
+
+  setActiveTag(nextActiveTag);
+
+  updateOutput(activeTagValue);
+}
+function setActiveTag(nextActiveTag) {
+  const currentActiveTag = refs.tags.querySelector(".tags__btn--active");
+  // console.log("currentActiveTag :", currentActiveTag);
+  if (currentActiveTag) {
+    // console.log("уже есть активный, снимаю класс");
+    currentActiveTag.classList.remove("tags__btn--active");
+  }
+  nextActiveTag.classList.add("tags__btn--active");
+}
+function updateOutput(value) {
+  refs.activetagOutput.textContent = value;
+}
